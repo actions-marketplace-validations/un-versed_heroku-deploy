@@ -84,7 +84,7 @@ inputs:
     required: false
     default: ""
   createpostgres: 
-    description: "Creates a PostgreSQL instance before the app deployment"
+    description: "Creates a PostgreSQL instance after the app creation"
     required: false
     default: "false"
   postgresplan: 

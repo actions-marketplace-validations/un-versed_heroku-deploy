@@ -230,8 +230,8 @@ if (heroku.dockerBuildArgs) {
     }
     console.log("Successfully logged into heroku");
 
-    createPostgres(heroku);
     addRemote(heroku);
+    createPostgres(heroku);
     addConfig(heroku);
 
     try {
