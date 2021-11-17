@@ -35,7 +35,7 @@ const addRemote = ({ app_name, dontautocreate, buildpack, region, team, stack })
 };
 
 const createPostgres = ({ app_name, createpostgres, plan }) => {
-  if (createpostgres) throw err;
+  if (!createpostgres) throw err;
 
   execSync(`heroku addons:create heroku-postgresql:${plan} --app ${app_name}`);
 };
@@ -157,7 +157,7 @@ let heroku = {
   region: core.getInput("region"),
   stack: core.getInput("stack"),
   team: core.getInput("team"),
-  createpostgres: core.getInput("createpostgres") === "false" ? false : true,
+  createpostgres: core.getInput("createpostgres") ? false : true,
   postgresplan: core.getInput("postgresplan")
 };
 
