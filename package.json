@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AkhileshNS/heroku-deploy.git"
+    "url": "git+https://github.com/un-versed/heroku-deploy.git"
   },
   "keywords": [
     "heroku",
@@ -20,9 +20,9 @@
   ],
   "author": "AkhileshNS",
   "bugs": {
-    "url": "https://github.com/AkhileshNS/heroku-deploy/issues"
+    "url": "https://github.com/un-versed/heroku-deploy/issues"
   },
-  "homepage": "https://github.com/AkhileshNS/heroku-deploy#readme",
+  "homepage": "https://github.com/un-versed/heroku-deploy#readme",
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.2.6",
