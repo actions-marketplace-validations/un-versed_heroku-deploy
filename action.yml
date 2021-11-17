@@ -83,6 +83,15 @@ inputs:
     description: "If deploying to an organization, then specify the name of the team or organization here"
     required: false
     default: ""
+  createpostgres: 
+    description: "Creates a PostgreSQL instance before the app deployment"
+    required: false
+    default: "false"
+  postgresplan: 
+    description: "Sets which plan to use in PostgreSQL addon"
+    required: false
+    default: "hobby-dev"
+
 outputs:
   status:
     description: "The Success/Failure of the action"

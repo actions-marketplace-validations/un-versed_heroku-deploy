@@ -34,6 +34,12 @@ const addRemote = ({ app_name, dontautocreate, buildpack, region, team, stack })
   }
 };
 
+const createPostgres = ({ app_name, createpostgres, plan }) => {
+  if (createpostgres) throw err;
+
+  execSync(`heroku addons:create heroku-postgresql:${plan} --app ${app_name}`);
+};
+
 const addConfig = ({ app_name, env_file, appdir }) => {
   let configVars = [];
   for (let key in process.env) {
@@ -151,6 +157,8 @@ let heroku = {
   region: core.getInput("region"),
   stack: core.getInput("stack"),
   team: core.getInput("team"),
+  createpostgres: core.getInput("createpostgres") === "false" ? false : true,
+  postgresplan: core.getInput("postgresplan")
 };
 
 // Formatting
@@ -218,6 +226,7 @@ if (heroku.dockerBuildArgs) {
     }
     console.log("Successfully logged into heroku");
 
+    createPostgres(heroku);
     addRemote(heroku);
     addConfig(heroku);
 
