@@ -35,9 +35,7 @@ const addRemote = ({ app_name, dontautocreate, buildpack, region, team, stack })
 };
 
 const createPostgres = ({ app_name, createpostgres, plan }) => {
-  if (!createpostgres) throw err;
-
-  execSync(`heroku addons:create heroku-postgresql:${plan} --app ${app_name}`);
+  if (createpostgres) execSync(`heroku addons:create heroku-postgresql:${plan} --app ${app_name}`);
 };
 
 const addConfig = ({ app_name, env_file, appdir }) => {
