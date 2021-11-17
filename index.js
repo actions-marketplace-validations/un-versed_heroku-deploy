@@ -25,11 +25,11 @@ const addRemote = ({ app_name, dontautocreate, buildpack, region, team, stack })
 
     execSync(
       "heroku create " +
-        app_name +
-        (buildpack ? " --buildpack " + buildpack : "") +
-        (region ? " --region " + region : "") +
-        (stack ? " --stack " + stack : "") +
-        (team ? " --team " + team : "")
+      app_name +
+      (buildpack ? " --buildpack " + buildpack : "") +
+      (region ? " --region " + region : "") +
+      (stack ? " --stack " + stack : "") +
+      (team ? " --team " + team : "")
     );
   }
 };
@@ -159,8 +159,8 @@ if (heroku.appdir) {
     heroku.appdir[0] === "." && heroku.appdir[1] === "/"
       ? heroku.appdir.slice(2)
       : heroku.appdir[0] === "/"
-      ? heroku.appdir.slice(1)
-      : heroku.appdir;
+        ? heroku.appdir.slice(1)
+        : heroku.appdir;
 }
 
 // Collate docker build args into arg list
@@ -182,7 +182,7 @@ if (heroku.dockerBuildArgs) {
       execSync(createCatFile(heroku));
       console.log("Created and wrote to ~/.netrc");
 
-      if(!heroku.dontautocreate) addRemote(heroku);
+      if (!heroku.dontautocreate) addRemote(heroku);
       return;
     }
 
@@ -243,7 +243,7 @@ if (heroku.dockerBuildArgs) {
         if (res.statusCode !== 200) {
           throw new Error(
             "Status code of network request is not 200: Status code - " +
-              res.statusCode
+            res.statusCode
           );
         }
         if (heroku.checkstring && heroku.checkstring !== res.body.toString()) {
