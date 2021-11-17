@@ -182,6 +182,7 @@ if (heroku.dockerBuildArgs) {
       execSync(createCatFile(heroku));
       console.log("Created and wrote to ~/.netrc");
 
+      if(!heroku.dontautocreate) addRemote(heroku);
       return;
     }
 
