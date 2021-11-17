@@ -97,7 +97,7 @@ jobs:
     needs: deploy-test-4
     steps:
       - uses: actions/checkout@v2
-      - run: npm run setup tests/test-1/data.json
+      - run: npm run setup tests/test-5/data.json
       - run: |
           git config --global user.email "gu.bat98@gmail.com"
           git config --global user.name "unversed"
@@ -106,10 +106,10 @@ jobs:
       - uses: un-versed/heroku-deploy@master
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "unversed-hd-test-1"
+          heroku_app_name: "unversed-hd-test-5"
           heroku_email: "gu.bat98@gmail.com"
-          appdir: "tests/test-1"
-          healthcheck: "https://unversed-hd-test-1.herokuapp.com/"
+          appdir: "tests/test-5"
+          healthcheck: "https://unversed-hd-test-5.herokuapp.com/"
           env_file: ".env"
           createpostgres: true
           postgresplan: "hobby-dev"
