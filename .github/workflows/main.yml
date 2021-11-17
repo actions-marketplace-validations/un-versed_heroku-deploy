@@ -38,7 +38,7 @@ jobs:
           git config --global user.name "unversed"
           git add -A
           git commit -m "Added index.html"
-      - uses: unversed/heroku-deploy@master
+      - uses: un-versed/heroku-deploy@master
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "unversed-hd-test-2"
@@ -60,7 +60,7 @@ jobs:
           git config --global user.name "unversed"
           git add -A
           git commit -m "Added data.json"
-      - uses: unversed/heroku-deploy@master
+      - uses: un-versed/heroku-deploy@master
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "unversed-hd-test-3"
@@ -81,7 +81,7 @@ jobs:
           git config --global user.name "unversed"
           git add -A
           git commit -m "Added data.json"
-      - uses: unversed/heroku-deploy@master
+      - uses: un-versed/heroku-deploy@master
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "unversed-hd-test-4"
