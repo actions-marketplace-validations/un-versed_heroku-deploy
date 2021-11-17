@@ -89,8 +89,8 @@ inputs:
     default: "false"
   postgresplan: 
     description: "Sets which plan to use in PostgreSQL addon"
-    required: false
     default: "hobby-dev"
+    required: false
 
 outputs:
   status:
