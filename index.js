@@ -37,7 +37,7 @@ const addRemote = ({ app_name, dontautocreate, buildpack, region, team, stack })
 const checkPostgres = ({ app_name }) => {
   const pgInfo = execSync(`heroku pg:info --app ${app_name}`)
 
-  return err.toString().includes("has no heroku-postgresql databases")
+  return pgInfo.toString().includes("has no heroku-postgresql databases")
 };
 
 const createPostgres = ({ app_name, createpostgres, postgresplan }) => {
