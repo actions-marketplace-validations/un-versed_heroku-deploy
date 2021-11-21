@@ -41,7 +41,7 @@ const checkPostgres = ({ app_name }) => {
 };
 
 const createPostgres = ({ app_name, createpostgres, postgresplan }) => {
-  if (createpostgres && checkPostgres) execSync(`heroku addons:create heroku-postgresql:${postgresplan} --app ${app_name}`);
+  if (createpostgres && checkPostgres({ app_name })) execSync(`heroku addons:create heroku-postgresql:${postgresplan} --app ${app_name}`);
 };
 
 const addConfig = ({ app_name, env_file, appdir }) => {
